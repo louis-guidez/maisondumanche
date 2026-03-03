@@ -1,0 +1,13 @@
+{
+  "name": "maison-du-manche",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "install:all": "npm install --prefix apps/web",
+    "dev": "npm --prefix apps/web run dev",
+    "build": "npm --prefix apps/web run build"
+  }
+}
