@@ -14,7 +14,7 @@ import { ChipGroup } from "./ChipGroup";
 export function DemoShowcase() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState("Je cherche une edition legere et durable.");
+  const [message, setMessage] = useState('');
   const [adaptable, setAdaptable] = useState(true);
   const [durable, setDurable] = useState(true);
   const [giftWrap, setGiftWrap] = useState(false);
