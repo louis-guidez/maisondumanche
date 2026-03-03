@@ -20,18 +20,22 @@ export function ContactPage() {
 
   return (
     <main className="ds-page">
-      <section className="ds-page-head">
-        <Badge variant="eco" icon="🍃">
-          Reponse sous 24h
-        </Badge>
-        <Label as="h1" size="xl">
-          Contactez notre atelier
-        </Label>
-        <Label tone="muted">Une question sur une edition, un format ou un accessoire ?</Label>
-      </section>
 
       <section className="ds-grid">
+        
         <div className="ds-col">
+          <Label size="3xl" bold>Contactez-nous</Label>
+          <Label size="lg">Dites-nous ce que vous avez pensé de nos produits et services.</Label>
+          <Label size="xl" tone="muted">Nous sommes à votre écoute pour toute question ou suggestion.</Label>
+
+          <InfoCard title="Besoin d'aide ?">
+            <p>Notre équipe support est disponible du lundi au vendredi de 9h à 18h.</p>
+            <p>Contactez-nous par email à <a href="mailto:support@maison.com">support@maison.com</a></p>
+          </InfoCard>
+        </div>
+
+        <div className="ds-col">
+          
           <TextInput label="Nom complet" placeholder="Jean Dupont" value={name} onChange={(e) => setName(e.target.value)} />
           <TextInput
             label="Email"
@@ -64,15 +68,6 @@ export function ContactPage() {
           >
             Envoyer la demande
           </Button>
-        </div>
-
-        <div className="ds-col">
-          <InfoCard title="Service client" subtitle="Lundi au vendredi">
-            <Label>09:00 - 18:00</Label>
-          </InfoCard>
-          <InfoCard title="Atelier Paris" subtitle="Rue des Artisans">
-            <Label tone="muted">Essais sur rendez-vous et conseils personnalises.</Label>
-          </InfoCard>
         </div>
       </section>
     </main>

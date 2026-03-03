@@ -13,8 +13,19 @@
 }
 
 .ds-label {
-  display: inline-flex;
-  line-height: 1.25;
+  font-weight: 500;
+}
+
+.ds-label--small {
+  font-size: 0.8rem;
+}
+
+.ds-label--medium {
+  font-size: 1rem;
+}
+
+.ds-label--large {
+  font-size: 1.2rem;
 }
 
 .ds-label--sm {
@@ -30,7 +41,15 @@
 }
 
 .ds-label--xl {
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-size: 1.5rem;
+}
+
+.ds-label--2xl {
+  font-size: 2rem;
+}
+
+.ds-label--3xl {
+  font-size: 2.5rem;
 }
 
 .ds-label--default {
@@ -43,6 +62,22 @@
 
 .ds-label--contrast {
   color: #f8f6f3;
+}
+
+.ds-label--bold {
+  font-weight: 800;
+}
+
+.ds-label--italic {
+  font-style: italic;
+}
+
+.ds-label--underline {
+  text-decoration: underline;
+}
+
+.ds-label--strike {
+  text-decoration: line-through;
 }
 
 .ds-page {
@@ -733,7 +768,7 @@
 
 @media (min-width: 980px) {
   .ds-grid {
-    grid-template-columns: 1.2fr 0.9fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .ds-article-grid {
