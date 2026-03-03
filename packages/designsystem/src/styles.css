@@ -741,6 +741,7 @@
 
 .ds-navbar__item.is-active {
   background: linear-gradient(160deg, #526d61, #3f574c);
+  color: #eee4da;
 }
 
 .ds-navbar__item:focus-visible {
