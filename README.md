@@ -1,4 +1,4 @@
-# La Maison du Manche - Design System (WIP)
+# La Maison du Manche - Design System
 
 Ce repository contient le **design system en cours de construction** pour la marque **La maison du manche**.
 
@@ -11,16 +11,6 @@ Ce repository contient le **design system en cours de construction** pour la mar
 ## Objectif du projet
 
 Construire un design system React réutilisable (atoms, molecules, components), avec des pages de démonstration, pour poser des bases UI cohérentes avant industrialisation.
-
-## Prochaine étape : fondations visuelles
-
-Direction validée pour les prochaines itérations :
-
-- Bordures : **pas de bordures**
-- Formes : **plutôt carrées** (angles réduits)
-- Boutons : **gros boutons** pour inciter au clic
-- Espacements : **grosses marges et paddings**
-- Style global : **design épuré avec de gros espacements**
 
 ## État actuel
 
