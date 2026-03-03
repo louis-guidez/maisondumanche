@@ -1,15 +1,21 @@
-interface RadioItemProps {
+import { useId } from "react";
+import type { InputHTMLAttributes, ReactNode } from "react";
+
+interface RadioItemProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
   label: string;
-  checked?: boolean;
-  icon?: string;
+  icon?: ReactNode;
 }
 
-export function RadioItem({ label, checked = false, icon }: RadioItemProps) {
+export function RadioItem({ label, icon, id, className, ...inputProps }: RadioItemProps) {
+  const generatedId = useId();
+  const inputId = id ?? `radio-${generatedId}`;
+
   return (
-    <label className="ds-radio-item">
-      <span className={`ds-radio-dot ${checked ? "is-checked" : ""}`}>{checked ? "●" : ""}</span>
+    <label className={`ds-radio-item ${className ?? ""}`.trim()} htmlFor={inputId}>
+      <input id={inputId} type="radio" className="ds-control-input" {...inputProps} />
+      <span className="ds-radio-dot" aria-hidden="true" />
       <span>
-        {icon ? `${icon} ` : ""}
+        {icon ? <span className="ds-radio-icon">{icon}</span> : null}
         {label}
       </span>
     </label>

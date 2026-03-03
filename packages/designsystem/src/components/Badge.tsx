@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ButtonHTMLAttributes, ReactNode } from "react";
 
 type BadgeVariant = "special" | "eco" | "new" | "sale";
 
@@ -9,15 +9,29 @@ const variantClass: Record<BadgeVariant, string> = {
   sale: "ds-badge--sale"
 };
 
-interface BadgeProps {
+interface BadgeProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant?: BadgeVariant;
   icon?: ReactNode;
+  asButton?: boolean;
 }
 
-export function Badge({ children, variant = "special", icon }: BadgeProps) {
+export function Badge({ children, variant = "special", icon, asButton = false, ...buttonProps }: BadgeProps) {
+  const className = ["ds-badge", variantClass[variant], asButton ? "ds-badge--interactive" : ""]
+    .filter(Boolean)
+    .join(" ");
+
+  if (asButton) {
+    return (
+      <button type="button" className={className} {...buttonProps}>
+        {icon ? <span className="ds-badge__icon">{icon}</span> : null}
+        {children}
+      </button>
+    );
+  }
+
   return (
-    <span className={`ds-badge ${variantClass[variant]}`}>
+    <span className={className}>
       {icon ? <span className="ds-badge__icon">{icon}</span> : null}
       {children}
     </span>

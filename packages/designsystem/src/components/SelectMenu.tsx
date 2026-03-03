@@ -1,20 +1,104 @@
-interface SelectMenuProps {
-  title: string;
-  items: string[];
+import { useEffect, useMemo, useRef, useState } from "react";
+import type { ReactNode } from "react";
+
+export interface SelectOption {
+  value: string;
+  label: string;
+  icon?: ReactNode;
 }
 
-export function SelectMenu({ title, items }: SelectMenuProps) {
+interface SelectMenuProps {
+  label: string;
+  options: SelectOption[];
+  value?: string;
+  defaultValue?: string;
+  onChange?: (value: string) => void;
+}
+
+export function SelectMenu({ label, options, value, defaultValue, onChange }: SelectMenuProps) {
+  const [open, setOpen] = useState(false);
+  const [internalValue, setInternalValue] = useState(defaultValue ?? options[0]?.value ?? "");
+  const rootRef = useRef<HTMLDivElement>(null);
+  const isControlled = value !== undefined;
+  const selectedValue = isControlled ? value : internalValue;
+
+  const selectedOption = useMemo(
+    () => options.find((option) => option.value === selectedValue) ?? options[0],
+    [options, selectedValue]
+  );
+
+  useEffect(() => {
+    function onDocumentClick(event: MouseEvent) {
+      if (!rootRef.current?.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    }
+
+    function onEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", onDocumentClick);
+    document.addEventListener("keydown", onEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", onDocumentClick);
+      document.removeEventListener("keydown", onEscape);
+    };
+  }, []);
+
+  function selectOption(nextValue: string) {
+    if (!isControlled) {
+      setInternalValue(nextValue);
+    }
+    onChange?.(nextValue);
+    setOpen(false);
+  }
+
   return (
-    <div className="ds-select">
-      <div className="ds-select__head">
-        <span>{title}</span>
-        <span>⌄</span>
-      </div>
-      {items.map((item) => (
-        <div className="ds-select__item" key={item}>
-          {item}
-        </div>
-      ))}
+    <div className="ds-select" ref={rootRef}>
+      <button
+        type="button"
+        className="ds-select__head"
+        aria-expanded={open}
+        aria-haspopup="listbox"
+        onClick={() => setOpen((state) => !state)}
+      >
+        <span>
+          {selectedOption?.icon ? <span className="ds-select__icon">{selectedOption.icon}</span> : null}
+          {selectedOption?.label ?? label}
+        </span>
+        <span className={`ds-select__caret ${open ? "is-open" : ""}`} aria-hidden="true">
+          ⌄
+        </span>
+      </button>
+
+      {open ? (
+        <ul className="ds-select__list" role="listbox">
+          {options.map((option) => {
+            const isSelected = option.value === selectedOption?.value;
+            return (
+              <li key={option.value} className="ds-select__item-wrap">
+                <button
+                  type="button"
+                  className="ds-select__item"
+                  role="option"
+                  aria-selected={isSelected}
+                  onClick={() => selectOption(option.value)}
+                >
+                  <span>
+                    {option.icon ? <span className="ds-select__icon">{option.icon}</span> : null}
+                    {option.label}
+                  </span>
+                  {isSelected ? <span aria-hidden="true">✓</span> : null}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      ) : null}
     </div>
   );
 }

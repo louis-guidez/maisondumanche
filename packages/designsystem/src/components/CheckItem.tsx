@@ -1,12 +1,18 @@
-interface CheckItemProps {
+import { useId } from "react";
+import type { InputHTMLAttributes } from "react";
+
+interface CheckItemProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
   label: string;
-  checked?: boolean;
 }
 
-export function CheckItem({ label, checked = false }: CheckItemProps) {
+export function CheckItem({ label, id, className, ...inputProps }: CheckItemProps) {
+  const generatedId = useId();
+  const inputId = id ?? `check-${generatedId}`;
+
   return (
-    <label className="ds-check-item">
-      <span className={`ds-check-box ${checked ? "is-checked" : ""}`}>{checked ? "✓" : ""}</span>
+    <label className={`ds-check-item ${className ?? ""}`.trim()} htmlFor={inputId}>
+      <input id={inputId} type="checkbox" className="ds-control-input" {...inputProps} />
+      <span className="ds-check-box" aria-hidden="true" />
       <span>{label}</span>
     </label>
   );
