@@ -704,6 +704,7 @@
 
 .ds-navbar__item.is-active {
   background: linear-gradient(160deg, #526d61, #3f574c);
+  color: #eee4da;
 }
 
 .ds-navbar__item:focus-visible {
@@ -1138,4 +1139,87 @@
   .ds-product-card {
     grid-template-columns: 1fr;
   }
+}
+
+.ds-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #f8f6f2;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.ds-navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ds-navbar__logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #2f2a24;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.ds-navbar__tagline {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-left: 0.5em;
+}
+
+.ds-navbar__nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.ds-navbar__item {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  position: relative;
+  padding: 0.4rem 0;
+  transition: opacity 0.2s ease;
+  padding: 1em;
+}
+
+.ds-navbar__item::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #2f2a24;
+  transition: width 0.25s ease;
+}
+
+.ds-navbar__actions {
+  display: flex;
+  align-items: center;
+}
+
+.ds-navbar__cta {
+  background: #2f2a24;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ds-navbar__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
