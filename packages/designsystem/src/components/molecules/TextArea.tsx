@@ -1,5 +1,5 @@
 import type { ReactNode, TextareaHTMLAttributes } from "react";
-import { Label } from "./Label";
+import { Label } from "../atoms/Label";
 
 interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   icon?: ReactNode;

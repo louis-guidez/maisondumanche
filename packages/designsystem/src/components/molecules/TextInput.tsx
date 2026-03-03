@@ -1,5 +1,5 @@
 import type { InputHTMLAttributes, ReactNode } from "react";
-import { Label } from "./Label";
+import { Label } from "../atoms/Label";
 
 interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: ReactNode;

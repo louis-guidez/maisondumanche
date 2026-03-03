@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { Badge } from "./Badge";
-import { Button } from "./Button";
-import { TextInput } from "./TextInput";
-import { TextArea } from "./TextArea";
-import { SelectMenu } from "./SelectMenu";
-import { CheckItem } from "./CheckItem";
-import { RadioItem } from "./RadioItem";
-import { ToggleSwitch } from "./ToggleSwitch";
-import { QuantityStepper } from "./QuantityStepper";
+import { Badge } from "../atoms/Badge";
+import { Button } from "../atoms/Button";
+import { TextInput } from "../molecules/TextInput";
+import { TextArea } from "../molecules/TextArea";
+import { SelectMenu } from "../molecules/SelectMenu";
+import { CheckItem } from "../molecules/CheckItem";
+import { RadioItem } from "../molecules/RadioItem";
+import { ToggleSwitch } from "../molecules/ToggleSwitch";
+import { QuantityStepper } from "../molecules/QuantityStepper";
 import { InfoCard } from "./InfoCard";
-import { ChipGroup } from "./ChipGroup";
+import { ChipGroup } from "../molecules/ChipGroup";
 
 const DEMO_PLACEHOLDERS = {
   name: "Votre nom",

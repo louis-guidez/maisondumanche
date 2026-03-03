@@ -1,6 +1,6 @@
-import { Badge } from "./Badge";
-import { Button } from "./Button";
-import { Label } from "./Label";
+import { Badge } from "../atoms/Badge";
+import { Button } from "../atoms/Button";
+import { Label } from "../atoms/Label";
 
 interface ProductCardProps {
   title: string;

@@ -1,4 +1,4 @@
-import { Label } from "./Label";
+import { Label } from "../atoms/Label";
 import type { ReactNode } from "react";
 
 export interface ChipOption {

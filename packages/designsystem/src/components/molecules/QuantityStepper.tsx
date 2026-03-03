@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Label } from "./Label";
+import { Label } from "../atoms/Label";
 
 interface QuantityStepperProps {
   label?: string;

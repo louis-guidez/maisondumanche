@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import { Button } from "./Button";
-import { Label } from "./Label";
+import { Button } from "../atoms/Button";
+import { Label } from "../atoms/Label";
 
 interface ModalProps {
   open: boolean;

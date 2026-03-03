@@ -1,6 +1,6 @@
 import { useId } from "react";
 import type { InputHTMLAttributes } from "react";
-import { Label } from "./Label";
+import { Label } from "../atoms/Label";
 
 interface CheckItemProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
   label: string;

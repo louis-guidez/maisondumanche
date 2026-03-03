@@ -1,4 +1,4 @@
-import { Label } from "./Label";
+import { Label } from "../atoms/Label";
 
 interface PageSwitchProps {
   page: number;

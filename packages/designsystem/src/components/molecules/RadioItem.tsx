@@ -1,6 +1,6 @@
 import { useId } from "react";
 import type { InputHTMLAttributes, ReactNode } from "react";
-import { Label } from "./Label";
+import { Label } from "../atoms/Label";
 
 interface RadioItemProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
   label: string;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Label } from "./Label";
+import { Label } from "../atoms/Label";
 
 export interface AccordionItem {
   key: string;

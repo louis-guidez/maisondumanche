@@ -1,4 +1,4 @@
-import { Label } from "./Label";
+import { Label } from "../atoms/Label";
 
 export interface BreadcrumbItem {
   key: string;

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
-import { Label } from "./Label";
+import { Label } from "../atoms/Label";
 
 export interface SelectOption {
   value: string;
