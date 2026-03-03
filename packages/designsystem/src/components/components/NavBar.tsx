@@ -1,5 +1,5 @@
 import { Label } from "../atoms/Label";
-import "../styles.css";
+import "../../styles.css";
 
 export interface NavItem {
   key: string;
