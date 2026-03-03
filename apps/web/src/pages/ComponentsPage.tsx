@@ -47,8 +47,8 @@ export function ComponentsPage() {
   const [checkB, setCheckB] = useState(false);
   const [radio, setRadio] = useState("nuit");
   const [page, setPage] = useState(2);
-  const [name, setName] = useState("Camille Martin");
-  const [note, setNote] = useState("Recherche une finition satinée avec une prise légère.");
+  const [name, setName] = useState('');
+  const [note, setNote] = useState('');
   const [openModal, setOpenModal] = useState(false);
 
   return (
@@ -119,8 +119,8 @@ export function ComponentsPage() {
         <div className="ds-grid">
           <InfoCard title="Composants de formulaire" subtitle="Entrée, sélection, validation">
             <div className="ds-col">
-              <TextInput label="Nom" value={name} onChange={(e) => setName(e.target.value)} icon="🪵" />
-              <TextArea label="Demande" rows={4} value={note} onChange={(e) => setNote(e.target.value)} icon="✎" />
+              <TextInput label="Nom" value={name} placeholder="Camille Martin" onChange={(e) => setName(e.target.value)} icon="🪵" />
+              <TextArea label="Demande" rows={4} value={note} placeholder="Recherche une finition satinée avec une prise légère." onChange={(e) => setNote(e.target.value)} icon="✎" />
               <SelectMenu
                 label="Categorie"
                 value={selectValue}
