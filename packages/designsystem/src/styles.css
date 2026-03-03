@@ -1260,3 +1260,49 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+/* Hotfix: keep current navbar look, but restore select dropdown behavior and
+   apply a subtle button refinement. */
+.ds-button {
+  align-items: center;
+  line-height: 1.15;
+  display: inline-flex;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: 0.01em;
+  min-height: 2.85rem;
+  padding: 0.85rem 1.3rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.ds-select {
+  isolation: isolate;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+.ds-select.is-open {
+  z-index: 120;
+}
+
+.ds-select__box {
+  border: 1px solid var(--ds-border);
+  border-radius: 0.7rem;
+  box-shadow: 0 6px 18px rgb(95 78 60 / 8%);
+  overflow: hidden;
+}
+
+.ds-select__list {
+  background: linear-gradient(140deg, var(--ds-surface-elevated), var(--ds-surface));
+  border: 1px solid var(--ds-border);
+  border-radius: 0.7rem;
+  box-shadow: 0 16px 28px rgb(53 42 31 / 18%);
+  left: 0;
+  max-height: min(22rem, 55vh);
+  overflow-y: auto;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.35rem);
+  z-index: 140;
+}

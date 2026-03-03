@@ -30,6 +30,13 @@ body {
   z-index: 20;
 }
 
+/* Garde le style global de la navbar, réduit seulement la hauteur des boutons de navigation */
+.app-top-nav .ds-button {
+  font-size: clamp(0.92rem, 1.35vw, 1.02rem);
+  min-height: 2.15rem;
+  padding: 0.42rem 0.86rem;
+}
+
 @media (max-width: 640px) {
   .app-top-nav {
     flex-wrap: wrap;

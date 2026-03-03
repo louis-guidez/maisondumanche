@@ -59,27 +59,29 @@ export function SelectMenu({ label, options, value, defaultValue, onChange }: Se
   }
 
   return (
-    <div className="ds-select" ref={rootRef}>
-      <Label className="ds-select__label" size="sm" tone="muted">
-        {label}
-      </Label>
-      <button
-        type="button"
-        className="ds-select__head"
-        aria-expanded={open}
-        aria-haspopup="listbox"
-        onClick={() => setOpen((state) => !state)}
-      >
-        <span className="ds-select__value">
-          <Label size="lg">
-            {selectedOption?.icon ? <span className="ds-select__icon">{selectedOption.icon}</span> : null}
-            {selectedOption?.label ?? label}
-          </Label>
-        </span>
-        <span className={`ds-select__caret ${open ? "is-open" : ""}`} aria-hidden="true">
-          ⌄
-        </span>
-      </button>
+    <div className={`ds-select ${open ? "is-open" : ""}`.trim()} ref={rootRef}>
+      <div className="ds-select__box">
+        <Label className="ds-select__label" size="sm" tone="muted">
+          {label}
+        </Label>
+        <button
+          type="button"
+          className="ds-select__head"
+          aria-expanded={open}
+          aria-haspopup="listbox"
+          onClick={() => setOpen((state) => !state)}
+        >
+          <span className="ds-select__value">
+            <Label size="lg">
+              {selectedOption?.icon ? <span className="ds-select__icon">{selectedOption.icon}</span> : null}
+              {selectedOption?.label ?? label}
+            </Label>
+          </span>
+          <span className={`ds-select__caret ${open ? "is-open" : ""}`} aria-hidden="true">
+            ⌄
+          </span>
+        </button>
+      </div>
 
       {open ? (
         <ul className="ds-select__list" role="listbox">

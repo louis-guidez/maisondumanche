@@ -118,7 +118,10 @@ export function DemoShowcase() {
               { value: "manches", label: "Manches" },
               { value: "poignees", label: "Poignees" },
               { value: "accessoires", label: "Accessoires" },
-              { value: "collection", label: "Decouvrir la collection", icon: "🍃" }
+              { value: "collection", label: "Decouvrir la collection", icon: "🍃" },
+              { value: "editions", label: "Editions limitees" },
+              { value: "signature", label: "Serie signature atelier" },
+              { value: "entretien", label: "Produits d'entretien" }
             ]}
           />
 

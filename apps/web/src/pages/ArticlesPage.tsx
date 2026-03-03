@@ -26,6 +26,16 @@ const ARTICLES = [
   { id: 7, category: "manches", title: "Manche Blanc", description: "Edition Nuit Blanche.", price: "72 EUR", badge: "special" as const },
   { id: 8, category: "poignees", title: "Poignee Brume", description: "Ligne sobre et legere.", price: "47 EUR", badge: "sale" as const }
 ];
+const POPULARITY_RANK: Record<number, number> = {
+  7: 1,
+  1: 2,
+  2: 3,
+  4: 4,
+  8: 5,
+  5: 6,
+  3: 7,
+  6: 8
+};
 
 const ITEMS_PER_PAGE = 4;
 
@@ -48,6 +58,18 @@ export function ArticlesPage() {
 
     if (sort === "price-desc") {
       result = [...result].sort((a, b) => Number(b.price.split(" ")[0]) - Number(a.price.split(" ")[0]));
+    }
+
+    if (sort === "name-asc") {
+      result = [...result].sort((a, b) => a.title.localeCompare(b.title));
+    }
+
+    if (sort === "name-desc") {
+      result = [...result].sort((a, b) => b.title.localeCompare(a.title));
+    }
+
+    if (sort === "popular") {
+      result = [...result].sort((a, b) => (POPULARITY_RANK[a.id] ?? 999) - (POPULARITY_RANK[b.id] ?? 999));
     }
 
     return result;
@@ -86,8 +108,11 @@ export function ArticlesPage() {
             }}
             options={[
               { value: "newest", label: "Plus recents" },
+              { value: "popular", label: "Plus populaires" },
               { value: "price-asc", label: "Prix croissant" },
-              { value: "price-desc", label: "Prix decroissant" }
+              { value: "price-desc", label: "Prix decroissant" },
+              { value: "name-asc", label: "Nom A-Z" },
+              { value: "name-desc", label: "Nom Z-A" }
             ]}
           />
 

@@ -180,7 +180,10 @@ export function ComponentsPage() {
               { value: "manches", label: "Manches" },
               { value: "poignees", label: "Poignees" },
               { value: "accessoires", label: "Accessoires" },
-              { value: "eco", label: "Selection eco", icon: "🍃" }
+              { value: "eco", label: "Selection eco", icon: "🍃" },
+              { value: "premium", label: "Selection premium" },
+              { value: "atelier", label: "Objets atelier" },
+              { value: "editions", label: "Editions limitees" }
             ]}
           />
         </InfoCard>
