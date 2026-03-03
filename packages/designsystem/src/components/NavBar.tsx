@@ -1,4 +1,4 @@
-import { Label } from "../atoms/Label";
+import { Label } from "./Label";
 import "../styles.css";
 
 export interface NavItem {
