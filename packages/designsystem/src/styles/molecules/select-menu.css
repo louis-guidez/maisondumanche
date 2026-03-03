@@ -11,6 +11,8 @@
 .ds-select__label {
   background: linear-gradient(140deg, #f8f2eb, #f2ebe3);
   border-bottom: 1px solid var(--ds-border);
+  border-top-left-radius: calc(0.7rem - 1px);
+  border-top-right-radius: calc(0.7rem - 1px);
   display: block;
   padding: clamp(0.45rem, 1vw, 0.55rem) clamp(0.85rem, 1.8vw, 1.1rem);
 }
@@ -19,6 +21,7 @@
   align-items: center;
   background: linear-gradient(140deg, var(--ds-surface-elevated), var(--ds-surface));
   border: 0;
+  border-radius: calc(0.7rem - 1px);
   color: inherit;
   cursor: pointer;
   display: grid;
@@ -27,6 +30,11 @@
   width: 100%;
   min-height: clamp(2.8rem, 6vw, 3.6rem);
   padding: clamp(0.55rem, 1.2vw, 0.7rem) clamp(0.85rem, 1.8vw, 1.1rem);
+}
+
+.ds-select__label + .ds-select__head {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .ds-select__value,
@@ -67,6 +75,7 @@
   list-style: none;
   margin: 0;
   max-height: min(22rem, 55vh);
+  overflow: hidden;
   overflow-y: auto;
   padding: 0;
   position: absolute;
@@ -96,3 +105,13 @@
 .ds-select__item[aria-selected="true"] { color: #435a4e; font-weight: 600; }
 .ds-select__item:focus-visible { outline: 2px solid var(--ds-focus); outline-offset: -2px; }
 .ds-select__icon { margin-right: 0.28rem; }
+
+.ds-select__item-wrap:first-child .ds-select__item {
+  border-top-left-radius: 0.65rem;
+  border-top-right-radius: 0.65rem;
+}
+
+.ds-select__item-wrap:last-child .ds-select__item {
+  border-bottom-left-radius: 0.65rem;
+  border-bottom-right-radius: 0.65rem;
+}
