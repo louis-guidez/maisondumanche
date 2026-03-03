@@ -7,8 +7,8 @@ import { CheckItem } from "./CheckItem";
 import { RadioItem } from "./RadioItem";
 
 export function DemoShowcase() {
-  const [name, setName] = useState("Jean Dupont");
-  const [email, setEmail] = useState("nom@email.com");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [adaptable, setAdaptable] = useState(true);
   const [durable, setDurable] = useState(true);
   const [format, setFormat] = useState("nuit-blanche");
