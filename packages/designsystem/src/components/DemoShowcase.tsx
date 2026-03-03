@@ -2,18 +2,27 @@ import { useState } from "react";
 import { Badge } from "./Badge";
 import { Button } from "./Button";
 import { TextInput } from "./TextInput";
+import { TextArea } from "./TextArea";
 import { SelectMenu } from "./SelectMenu";
 import { CheckItem } from "./CheckItem";
 import { RadioItem } from "./RadioItem";
+import { ToggleSwitch } from "./ToggleSwitch";
+import { QuantityStepper } from "./QuantityStepper";
+import { InfoCard } from "./InfoCard";
+import { ChipGroup } from "./ChipGroup";
 
 export function DemoShowcase() {
   const [name, setName] = useState("Jean Dupont");
   const [email, setEmail] = useState("nom@email.com");
+  const [message, setMessage] = useState("Je cherche une edition legere et durable.");
   const [adaptable, setAdaptable] = useState(true);
   const [durable, setDurable] = useState(true);
+  const [giftWrap, setGiftWrap] = useState(false);
   const [format, setFormat] = useState("nuit-blanche");
   const [category, setCategory] = useState("manches");
   const [activeBadge, setActiveBadge] = useState("special");
+  const [quantity, setQuantity] = useState(1);
+  const [chips, setChips] = useState<string[]>(["artisanat"]);
 
   return (
     <main className="ds-page">
@@ -43,12 +52,41 @@ export function DemoShowcase() {
             icon="✉"
           />
 
+          <TextArea
+            rows={3}
+            value={message}
+            onChange={(event) => setMessage(event.target.value)}
+            placeholder="Votre message"
+            icon="✎"
+          />
+
+          <ChipGroup
+            selected={chips}
+            onChange={setChips}
+            options={[
+              { value: "artisanat", label: "Artisanat", icon: "🍃" },
+              { value: "premium", label: "Premium" },
+              { value: "rapide", label: "Livraison rapide" }
+            ]}
+          />
+
+          <div className="ds-row ds-row--compact">
+            <QuantityStepper value={quantity} onChange={setQuantity} />
+            <ToggleSwitch label="Emballage cadeau" checked={giftWrap} onChange={(e) => setGiftWrap(e.target.checked)} />
+          </div>
+
           <Button
             onClick={() =>
               window.alert(
-                `Inscription envoyee\nNom: ${name}\nEmail: ${email}\nOptions: ${adaptable ? "adaptable" : ""} ${
-                  durable ? "durable" : ""
-                }`.trim()
+                [
+                  "Inscription envoyee",
+                  `Nom: ${name}`,
+                  `Email: ${email}`,
+                  `Categorie: ${category}`,
+                  `Quantite: ${quantity}`,
+                  `Options: ${adaptable ? "adaptable " : ""}${durable ? "durable" : ""}`.trim(),
+                  `Puce(s): ${chips.join(", ") || "aucune"}`
+                ].join("\n")
               )
             }
           >
@@ -78,7 +116,7 @@ export function DemoShowcase() {
             ]}
           />
 
-          <div className="ds-stack-sm ds-stack-offset" role="radiogroup" aria-label="Formats">
+          <div className="ds-stack-sm" role="radiogroup" aria-label="Formats">
             <RadioItem
               label="Edition Nuit Blanche"
               value="nuit-blanche"
@@ -95,6 +133,16 @@ export function DemoShowcase() {
               onChange={(event) => setFormat(event.target.value)}
             />
           </div>
+
+          <InfoCard
+            title="Edition Nuit Blanche"
+            subtitle="Collection artisanale"
+            action={<Button variant="light">Voir la fiche</Button>}
+          >
+            <p>
+              Finition douce, poids equilibre et format {format === "nuit-blanche" ? "classique" : "telescopique"}.
+            </p>
+          </InfoCard>
         </div>
       </section>
     </main>
