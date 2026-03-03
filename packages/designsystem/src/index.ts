@@ -8,6 +8,7 @@ export { ProgressBar } from "./components/atoms/ProgressBar";
 export { PriceTag } from "./components/atoms/PriceTag";
 export { Avatar } from "./components/atoms/Avatar";
 export { Toast } from "./components/atoms/Toast";
+export { AtomSection } from "./components/atoms/AtomSection";
 
 export { TextInput } from "./components/molecules/TextInput";
 export { SelectMenu } from "./components/molecules/SelectMenu";

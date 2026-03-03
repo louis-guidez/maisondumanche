@@ -7,7 +7,8 @@ import {
   Label,
   TextArea,
   TextInput,
-  ToggleSwitch
+  ToggleSwitch,
+  AtomSection
 } from "@maison/designsystem";
 
 const CONTACT_PLACEHOLDERS = {
@@ -27,66 +28,66 @@ export function ContactPage() {
 
   return (
     <main className="ds-page">
-
-      <section className="ds-grid">
-        
-        <div className="ds-col">
-          <Label size="3xl" bold>Contactez-nous</Label>
-          <Label size="lg">Dites-nous ce que vous avez pensé de nos produits et services.</Label>
-          <Label size="xl" tone="muted">Nous sommes à votre écoute pour toute question ou suggestion.</Label>
-
-          <InfoCard title="Besoin d'aide ?">
-            <p>Notre équipe support est disponible du lundi au vendredi de 9h à 18h.</p>
-            <p>Contactez-nous par email à <a href="mailto:support@maison.com">support@maison.com</a></p>
-          </InfoCard>
-        </div>
-
-        <div className="ds-col">
-          
-          <TextInput
-            label="Nom complet"
-            placeholder={CONTACT_PLACEHOLDERS.fullName}
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <TextInput
-            label="Email"
-            type="email"
-            placeholder={CONTACT_PLACEHOLDERS.email}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <TextInput
-            label="Sujet"
-            placeholder={CONTACT_PLACEHOLDERS.subject}
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-          />
-          <TextArea
-            label="Message"
-            rows={5}
-            placeholder={CONTACT_PLACEHOLDERS.message}
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-
-          <div className="ds-stack-sm">
-            <ToggleSwitch label="Recevoir la newsletter" checked={newsletter} onChange={(e) => setNewsletter(e.target.checked)} />
-            <CheckItem
-              label="J'accepte les conditions"
-              checked={termsAccepted}
-              onChange={(e) => setTermsAccepted(e.target.checked)}
-            />
+      <AtomSection cols={5} gap="2rem">
+        <div></div>
+        <div style={{ gridColumn: 'span 3' }}>
+          <div>
+            <InfoCard title="Contactez-nous" subtitle="">
+              <Label size="lg" bold>
+                Dites-nous ce que vous avez pensé de nos produits et services.
+              </Label>
+            </InfoCard>
           </div>
+          <div className="ds-contact-form">
+            <TextInput
+              label="Nom complet"
+              placeholder={CONTACT_PLACEHOLDERS.fullName}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <TextInput
+              label="Email"
+              type="email"
+              placeholder={CONTACT_PLACEHOLDERS.email}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <TextInput
+              label="Sujet"
+              placeholder={CONTACT_PLACEHOLDERS.subject}
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+            />
+            <TextArea
+              label="Message"
+              rows={5}
+              placeholder={CONTACT_PLACEHOLDERS.message}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
 
-          <Button
-            disabled={!termsAccepted || !name || !email || !message}
-            onClick={() => window.alert("Message envoye")}
-          >
-            Envoyer la demande
-          </Button>
+            <div className="ds-stack-sm">
+              <ToggleSwitch
+                label="Recevoir la newsletter"
+                checked={newsletter}
+                onChange={(e) => setNewsletter(e.target.checked)}
+              />
+              <CheckItem
+                label="J'accepte les conditions"
+                checked={termsAccepted}
+                onChange={(e) => setTermsAccepted(e.target.checked)}
+              />
+            </div>
+
+            <Button
+              disabled={!termsAccepted || !name || !email || !message}
+              onClick={() => window.alert("Message envoye")}
+            >
+              Envoyer la demande
+            </Button>
+          </div>
         </div>
-      </section>
+      </AtomSection>
     </main>
   );
 }

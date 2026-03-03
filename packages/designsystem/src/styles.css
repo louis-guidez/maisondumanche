@@ -34,3 +34,35 @@
 @import "./styles/components/empty-state.css";
 @import "./styles/components/modal.css";
 @import "./styles/components/timeline.css";
+
+.ds-atom-section {
+  width: 100%;
+}
+
+.ds-atom-section > div {
+  margin-bottom: 2rem;
+}
+
+.ds-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ds-contact-form .ds-stack-sm {
+  margin-bottom: 1.5rem;
+}
+
+.ds-contact-form .ds-label {
+  margin-bottom: 1rem;
+}
+
+.ds-contact-form .ds-text-input,
+.ds-contact-form .ds-text-area {
+  margin-bottom: 1rem;
+}
+
+.ds-text-input label,
+.ds-text-area label {
+  margin-bottom: 0.3rem;
+}
