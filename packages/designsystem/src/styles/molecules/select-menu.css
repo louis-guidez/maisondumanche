@@ -2,7 +2,8 @@
   border: 1px solid var(--ds-border);
   border-radius: 0.7rem;
   box-shadow: 0 6px 18px rgb(95 78 60 / 8%);
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
   max-width: 100%;
   width: clamp(14rem, 30vw, 20rem);
 }
@@ -57,8 +58,25 @@
 }
 
 .ds-select__caret.is-open { transform: rotate(180deg); }
-.ds-select__list { list-style: none; margin: 0; padding: 0; }
+.ds-select__list {
+  background: linear-gradient(140deg, var(--ds-surface-elevated), var(--ds-surface));
+  border: 1px solid var(--ds-border);
+  border-radius: 0.7rem;
+  box-shadow: 0 16px 28px rgb(53 42 31 / 18%);
+  left: 0;
+  list-style: none;
+  margin: 0;
+  max-height: min(22rem, 55vh);
+  overflow-y: auto;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.35rem);
+  z-index: 50;
+}
+
 .ds-select__item-wrap { border-top: 1px solid var(--ds-border); }
+.ds-select__item-wrap:first-child { border-top: 0; }
 
 .ds-select__item {
   align-items: center;
