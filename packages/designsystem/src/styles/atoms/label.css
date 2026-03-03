@@ -1,16 +1,17 @@
 .ds-label {
   font-weight: 500;
+  line-height: 1.25;
 }
 
 .ds-label--small { font-size: 0.8rem; }
 .ds-label--medium { font-size: 1rem; }
 .ds-label--large { font-size: 1.2rem; }
-.ds-label--sm { font-size: 0.95rem; }
-.ds-label--md { font-size: 1.05rem; }
-.ds-label--lg { font-size: 1.2rem; }
-.ds-label--xl { font-size: 1.5rem; }
-.ds-label--2xl { font-size: 2rem; }
-.ds-label--3xl { font-size: 2.5rem; }
+.ds-label--sm { font-size: clamp(0.82rem, 1.1vw, 0.95rem); }
+.ds-label--md { font-size: clamp(0.9rem, 1.3vw, 1.05rem); }
+.ds-label--lg { font-size: clamp(1rem, 1.6vw, 1.2rem); }
+.ds-label--xl { font-size: clamp(1.2rem, 2.2vw, 1.5rem); }
+.ds-label--2xl { font-size: clamp(1.5rem, 3vw, 2rem); }
+.ds-label--3xl { font-size: clamp(1.9rem, 4vw, 2.5rem); }
 
 .ds-label--default { color: var(--ds-ink); }
 .ds-label--muted { color: #625c57; }

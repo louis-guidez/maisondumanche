@@ -3,8 +3,9 @@
   border-radius: 0.7rem;
   cursor: pointer;
   font: inherit;
-  font-size: clamp(1.4rem, 2.5vw, 3rem);
-  padding: 1.1rem 1.5rem;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  line-height: 1.2;
+  padding: clamp(0.65rem, 1.4vw, 0.95rem) clamp(0.95rem, 2vw, 1.35rem);
   transition: transform 140ms ease, filter 180ms ease, box-shadow 180ms ease;
 }
 

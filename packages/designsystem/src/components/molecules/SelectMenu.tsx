@@ -70,10 +70,12 @@ export function SelectMenu({ label, options, value, defaultValue, onChange }: Se
         aria-haspopup="listbox"
         onClick={() => setOpen((state) => !state)}
       >
-        <Label size="lg">
-          {selectedOption?.icon ? <span className="ds-select__icon">{selectedOption.icon}</span> : null}
-          {selectedOption?.label ?? label}
-        </Label>
+        <span className="ds-select__value">
+          <Label size="lg">
+            {selectedOption?.icon ? <span className="ds-select__icon">{selectedOption.icon}</span> : null}
+            {selectedOption?.label ?? label}
+          </Label>
+        </span>
         <span className={`ds-select__caret ${open ? "is-open" : ""}`} aria-hidden="true">
           ⌄
         </span>
@@ -92,10 +94,12 @@ export function SelectMenu({ label, options, value, defaultValue, onChange }: Se
                   aria-selected={isSelected}
                   onClick={() => selectOption(option.value)}
                 >
-                  <Label size="lg">
-                    {option.icon ? <span className="ds-select__icon">{option.icon}</span> : null}
-                    {option.label}
-                  </Label>
+                  <span className="ds-select__item-value">
+                    <Label size="lg">
+                      {option.icon ? <span className="ds-select__icon">{option.icon}</span> : null}
+                      {option.label}
+                    </Label>
+                  </span>
                   {isSelected ? <span aria-hidden="true">✓</span> : null}
                 </button>
               </li>
