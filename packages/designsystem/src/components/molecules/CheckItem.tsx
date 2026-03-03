@@ -1,5 +1,6 @@
 import { useId } from "react";
 import type { InputHTMLAttributes } from "react";
+import { CheckboxControl } from "../atoms/CheckboxControl";
 import { Label } from "../atoms/Label";
 
 interface CheckItemProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
@@ -13,7 +14,7 @@ export function CheckItem({ label, id, className, ...inputProps }: CheckItemProp
   return (
     <label className={`ds-check-item ${className ?? ""}`.trim()} htmlFor={inputId}>
       <input id={inputId} type="checkbox" className="ds-control-input" {...inputProps} />
-      <span className="ds-check-box" aria-hidden="true" />
+      <CheckboxControl />
       <Label size="lg">{label}</Label>
     </label>
   );

@@ -1,0 +1,95 @@
+:root {
+  --ds-bg: #f2eee8;
+  --ds-bg-alt: #ebe4db;
+  --ds-ink: #342f2b;
+  --ds-border: #cdbfae;
+  --ds-green-dark: #3f574d;
+  --ds-green-soft: #83977f;
+  --ds-brown-soft: #8f7a65;
+  --ds-gold-soft: #b49b7f;
+  --ds-surface: #f8f4ef;
+  --ds-surface-elevated: #fbf8f4;
+  --ds-focus: #476257;
+}
+
+.ds-page {
+  background:
+    radial-gradient(circle at 14% 10%, rgb(255 255 255 / 55%), transparent 38%),
+    radial-gradient(circle at 88% 14%, rgb(180 155 127 / 14%), transparent 32%),
+    linear-gradient(160deg, var(--ds-bg), var(--ds-bg-alt));
+  color: var(--ds-ink);
+  min-height: 100vh;
+  padding: 3rem;
+}
+
+.ds-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ds-row--badges {
+  margin-bottom: 2.5rem;
+}
+
+.ds-row--compact {
+  align-items: center;
+  gap: 1rem 1.4rem;
+}
+
+.ds-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+.ds-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ds-page-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.7rem;
+}
+
+.ds-stack-sm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ds-stack-offset {
+  margin-top: 4rem;
+}
+
+.ds-components-panel {
+  margin-top: 0.8rem;
+}
+
+@media (min-width: 980px) {
+  .ds-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ds-article-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .ds-page {
+    padding: 1rem;
+  }
+
+  .ds-input {
+    font-size: 1.35rem;
+  }
+
+  .ds-product-card {
+    grid-template-columns: 1fr;
+  }
+}
