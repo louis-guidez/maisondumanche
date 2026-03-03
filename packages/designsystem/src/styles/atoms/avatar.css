@@ -1,0 +1,11 @@
+.ds-avatar {
+  align-items: center;
+  background: linear-gradient(160deg, #6f887a, #4d6759);
+  border-radius: 999px;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.ds-avatar--sm { height: 1.9rem; width: 1.9rem; }
+.ds-avatar--md { height: 2.4rem; width: 2.4rem; }
+.ds-avatar--lg { height: 3rem; width: 3rem; }

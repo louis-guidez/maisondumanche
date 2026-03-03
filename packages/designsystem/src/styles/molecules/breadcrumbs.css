@@ -1,0 +1,6 @@
+.ds-breadcrumbs { align-items: center; display: flex; flex-wrap: wrap; gap: 0.2rem; }
+.ds-breadcrumbs__item { align-items: center; display: inline-flex; gap: 0.25rem; }
+.ds-breadcrumbs__btn { background: transparent; border: 0; border-radius: 0.4rem; cursor: pointer; padding: 0.2rem 0.35rem; }
+.ds-breadcrumbs__btn.is-active { background: #efe5db; }
+.ds-breadcrumbs__btn:focus-visible { outline: 2px solid var(--ds-focus); outline-offset: 2px; }
+.ds-breadcrumbs__sep { color: #8b7f74; font-size: 0.9rem; }

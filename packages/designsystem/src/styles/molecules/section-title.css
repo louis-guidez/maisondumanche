@@ -1,0 +1,2 @@
+.ds-section-title { display: flex; flex-direction: column; gap: 0.25rem; }
+.ds-section-title__eyebrow { letter-spacing: 0.08em; text-transform: uppercase; }

@@ -70,6 +70,16 @@
   margin-top: 0.8rem;
 }
 
+.ds-label-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ds-label-demo--shapes {
+  margin-top: 1rem;
+}
+
 @media (min-width: 980px) {
   .ds-grid {
     grid-template-columns: 1fr 1fr;

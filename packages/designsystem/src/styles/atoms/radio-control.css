@@ -1,0 +1,20 @@
+.ds-radio-dot {
+  align-items: center;
+  border: 1px solid var(--ds-border);
+  border-radius: 999px;
+  display: inline-flex;
+  height: 2.1rem;
+  justify-content: center;
+  transition: border-color 140ms ease;
+  width: 2.1rem;
+}
+
+.ds-radio-dot::after {
+  background: #50695d;
+  border-radius: 999px;
+  content: "";
+  height: 0.9rem;
+  transform: scale(0);
+  transition: transform 140ms ease;
+  width: 0.9rem;
+}

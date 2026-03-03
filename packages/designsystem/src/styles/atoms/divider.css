@@ -1,0 +1,3 @@
+.ds-divider { align-items: center; display: flex; gap: 0.8rem; }
+.ds-divider__line { background: linear-gradient(90deg, transparent, #cdbfae, transparent); flex: 1; height: 1px; }
+.ds-divider__label { color: #7b6e62; font-size: 0.9rem; }

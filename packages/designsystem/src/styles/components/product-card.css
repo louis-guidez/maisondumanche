@@ -1,0 +1,22 @@
+.ds-article-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+
+.ds-product-card {
+  background: linear-gradient(155deg, #fcf9f5, #f0e8de);
+  border: 1px solid var(--ds-border);
+  border-radius: 0.9rem;
+  box-shadow: 0 10px 26px rgb(94 77 60 / 11%);
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) 1.6fr;
+  overflow: hidden;
+}
+
+.ds-product-card__image {
+  background:
+    radial-gradient(circle at 20% 20%, rgb(255 255 255 / 45%), transparent 45%),
+    linear-gradient(160deg, #6b8578, #4c6658);
+  min-height: 150px;
+}
+
+.ds-product-card__body { display: flex; flex-direction: column; gap: 0.65rem; padding: 0.8rem; }
+.ds-product-card__body .ds-label--lg { font-weight: 600; }
+.ds-product-card__footer { align-items: center; display: flex; gap: 0.8rem; justify-content: space-between; }

@@ -1,0 +1,15 @@
+.ds-textarea-wrap {
+  align-items: flex-start;
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: 0.7rem;
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 140ms ease;
+}
+
+.ds-textarea-wrap:hover { border-color: #b6a89d; transform: translateY(-1px); }
+.ds-textarea-wrap:focus-within { border-color: var(--ds-focus); box-shadow: 0 0 0 3px rgb(79 101 89 / 16%); }
+.ds-textarea-icon { font-size: 1.5rem; line-height: 1.8; text-align: center; width: 2rem; }
+.ds-textarea { background: transparent; border: 0; color: var(--ds-ink); font: inherit; font-size: 1.35rem; min-height: 5.8rem; outline: none; resize: vertical; width: 100%; }

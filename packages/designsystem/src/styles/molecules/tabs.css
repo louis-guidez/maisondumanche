@@ -1,0 +1,14 @@
+.ds-tabs {
+  background: linear-gradient(155deg, #faf6f1, #f0e8de);
+  border: 1px solid var(--ds-border);
+  border-radius: 0.75rem;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.35rem;
+}
+
+.ds-tabs__tab { background: transparent; border: 0; border-radius: 0.55rem; cursor: pointer; padding: 0.45rem 0.7rem; }
+.ds-tabs__tab.is-active { background: linear-gradient(160deg, #4d675b, #3f584d); }
+.ds-tabs__tab:hover:not(.is-active) { background: #eee4da; }
+.ds-tabs__tab:focus-visible { outline: 2px solid var(--ds-focus); outline-offset: 2px; }

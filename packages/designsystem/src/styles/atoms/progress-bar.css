@@ -1,0 +1,4 @@
+.ds-progress { display: flex; flex-direction: column; gap: 0.4rem; }
+.ds-progress__head { align-items: center; display: flex; justify-content: space-between; }
+.ds-progress__track { background: #e8ddd1; border-radius: 999px; height: 0.65rem; overflow: hidden; }
+.ds-progress__fill { background: linear-gradient(90deg, #7e9587, #4f675b); display: block; height: 100%; transition: width 200ms ease; }

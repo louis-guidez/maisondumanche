@@ -1,0 +1,19 @@
+.ds-chip-group { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.ds-chip {
+  align-items: center;
+  background: linear-gradient(145deg, #f8f4ef, #f1e9e0);
+  border: 1px solid var(--ds-border);
+  border-radius: 999px;
+  color: var(--ds-ink);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 0.98rem;
+  gap: 0.3rem;
+  padding: 0.45rem 0.95rem;
+  transition: background 140ms ease, border-color 140ms ease, transform 120ms ease;
+}
+
+.ds-chip:hover { background: #efe6dd; border-color: #bdaea2; transform: translateY(-1px); }
+.ds-chip:focus-visible { outline: 2px solid var(--ds-focus); outline-offset: 2px; }
+.ds-chip.is-selected { background: #e8f0ea; border-color: #5e796b; color: #3f584c; }

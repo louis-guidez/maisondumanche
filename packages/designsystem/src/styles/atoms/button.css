@@ -1,0 +1,15 @@
+.ds-button {
+  border: 1px solid rgb(57 76 68 / 12%);
+  border-radius: 0.7rem;
+  cursor: pointer;
+  font: inherit;
+  font-size: clamp(1.4rem, 2.5vw, 3rem);
+  padding: 1.1rem 1.5rem;
+  transition: transform 140ms ease, filter 180ms ease, box-shadow 180ms ease;
+}
+
+.ds-button:hover { box-shadow: 0 14px 30px rgb(51 68 60 / 22%); filter: saturate(1.08); transform: translateY(-1px); }
+.ds-button:focus-visible { outline: 2px solid var(--ds-focus); outline-offset: 2px; }
+.ds-button:disabled { cursor: not-allowed; opacity: 0.6; }
+.ds-button--primary { background: linear-gradient(160deg, #547063, #43584f); color: #f8f6f3; }
+.ds-button--light { background: linear-gradient(140deg, #fcfaf7, #f1ebe4); border-color: var(--ds-border); color: var(--ds-ink); }

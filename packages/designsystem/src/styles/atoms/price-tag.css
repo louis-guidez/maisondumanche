@@ -1,0 +1,11 @@
+.ds-price-tag {
+  align-items: center;
+  background: linear-gradient(145deg, #f9f4ed, #eee5db);
+  border: 1px solid var(--ds-border);
+  border-radius: 0.65rem;
+  display: inline-flex;
+  gap: 0.5rem;
+  padding: 0.35rem 0.6rem;
+}
+
+.ds-price-tag__before { text-decoration: line-through; }

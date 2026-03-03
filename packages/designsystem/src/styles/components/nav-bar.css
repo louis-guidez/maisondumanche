@@ -1,0 +1,14 @@
+.ds-navbar {
+  background: linear-gradient(155deg, #faf6f1, #f1e8de);
+  border: 1px solid var(--ds-border);
+  border-radius: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.45rem;
+}
+
+.ds-navbar__item { background: transparent; border: 0; border-radius: 0.55rem; cursor: pointer; padding: 0.5rem 0.85rem; transition: background 140ms ease; }
+.ds-navbar__item:hover { background: #eee4da; }
+.ds-navbar__item.is-active { background: linear-gradient(160deg, #526d61, #3f574c); }
+.ds-navbar__item:focus-visible { outline: 2px solid var(--ds-focus); outline-offset: 2px; }

@@ -1,0 +1,28 @@
+.ds-label {
+  font-weight: 500;
+}
+
+.ds-label--small { font-size: 0.8rem; }
+.ds-label--medium { font-size: 1rem; }
+.ds-label--large { font-size: 1.2rem; }
+.ds-label--sm { font-size: 0.95rem; }
+.ds-label--md { font-size: 1.05rem; }
+.ds-label--lg { font-size: 1.2rem; }
+.ds-label--xl { font-size: 1.5rem; }
+.ds-label--2xl { font-size: 2rem; }
+.ds-label--3xl { font-size: 2.5rem; }
+
+.ds-label--default { color: var(--ds-ink); }
+.ds-label--muted { color: #625c57; }
+.ds-label--contrast { color: #f8f6f3; }
+
+.ds-label--shape-plain { border-radius: 0; padding: 0; }
+.ds-label--shape-pill { border: 1px solid #ccbca9; border-radius: 999px; padding: 0.2rem 0.75rem; }
+.ds-label--shape-soft { background: linear-gradient(145deg, #faf4ed, #efe5da); border-radius: 0.45rem; padding: 0.24rem 0.55rem; }
+.ds-label--shape-outline { border: 1px solid #cab9a7; border-radius: 0.4rem; padding: 0.2rem 0.5rem; }
+.ds-label--shape-tag { background: linear-gradient(160deg, #587264, #445b50); border-radius: 0.32rem; color: #f8f6f3; padding: 0.2rem 0.5rem; }
+
+.ds-label--bold { font-weight: 800; }
+.ds-label--italic { font-style: italic; }
+.ds-label--underline { text-decoration: underline; }
+.ds-label--strike { text-decoration: line-through; }

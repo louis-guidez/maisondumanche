@@ -1,0 +1,18 @@
+.ds-page-switch { align-items: center; display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; }
+.ds-page-switch__pages { display: inline-flex; gap: 0.35rem; }
+.ds-page-switch__btn,
+.ds-page-switch__number {
+  background: linear-gradient(145deg, #faf6f1, #efe7dd);
+  border: 1px solid var(--ds-border);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: inline-flex;
+  padding: 0.45rem 0.75rem;
+}
+
+.ds-page-switch__btn:hover:not(:disabled),
+.ds-page-switch__number:hover { background: #eee4d9; }
+.ds-page-switch__number.is-active { background: linear-gradient(160deg, #4c665a, #3f564d); border-color: #4c665a; }
+.ds-page-switch__btn:disabled { cursor: not-allowed; opacity: 0.6; }
+.ds-page-switch__btn:focus-visible,
+.ds-page-switch__number:focus-visible { outline: 2px solid var(--ds-focus); outline-offset: 2px; }

@@ -1,0 +1,13 @@
+.ds-empty-state {
+  align-items: center;
+  background: linear-gradient(150deg, #fbf7f1, #eee4d9);
+  border: 1px dashed #c9baa9;
+  border-radius: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1.3rem;
+  text-align: center;
+}
+
+.ds-empty-state__icon { font-size: 1.3rem; }

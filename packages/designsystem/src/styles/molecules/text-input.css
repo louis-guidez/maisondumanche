@@ -1,0 +1,18 @@
+.ds-field { display: flex; flex-direction: column; gap: 0.45rem; }
+.ds-field__label { padding-left: 0.2rem; }
+
+.ds-input-wrap {
+  align-items: center;
+  background: linear-gradient(140deg, var(--ds-surface-elevated), var(--ds-surface));
+  border: 1px solid var(--ds-border);
+  border-radius: 0.7rem;
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 140ms ease;
+}
+
+.ds-input-wrap:hover { border-color: #bcae9f; transform: translateY(-1px); }
+.ds-input-wrap:focus-within { border-color: var(--ds-focus); box-shadow: 0 0 0 3px rgb(79 101 89 / 16%); }
+.ds-input-icon { font-size: 1.5rem; text-align: center; width: 2rem; }
+.ds-input { background: transparent; border: 0; color: var(--ds-ink); font: inherit; font-size: 2rem; outline: none; width: 100%; }

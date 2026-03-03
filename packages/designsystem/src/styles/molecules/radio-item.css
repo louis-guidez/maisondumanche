@@ -1,0 +1,15 @@
+.ds-radio-item {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  gap: 0.8rem;
+  position: relative;
+  width: fit-content;
+}
+
+.ds-radio-icon { margin-right: 0.3rem; }
+.ds-radio-item:hover .ds-radio-dot { border-color: #a99c91; }
+.ds-radio-item .ds-control-input:checked + .ds-radio-dot { border-color: #50695d; }
+.ds-radio-item .ds-control-input:checked + .ds-radio-dot::after { transform: scale(1); }
+.ds-control-input:focus-visible + .ds-radio-dot { box-shadow: 0 0 0 3px rgb(79 101 89 / 18%); }

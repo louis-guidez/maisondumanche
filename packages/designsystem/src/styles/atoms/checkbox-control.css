@@ -1,0 +1,12 @@
+.ds-control-input { inset: 0; opacity: 0; position: absolute; }
+
+.ds-check-box {
+  align-items: center;
+  border: 1px solid var(--ds-border);
+  border-radius: 0.4rem;
+  display: inline-flex;
+  height: 2.2rem;
+  justify-content: center;
+  transition: border-color 140ms ease, background 140ms ease;
+  width: 2.2rem;
+}

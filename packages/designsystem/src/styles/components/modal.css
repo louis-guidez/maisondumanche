@@ -1,0 +1,18 @@
+.ds-modal { inset: 0; position: fixed; z-index: 60; }
+.ds-modal__backdrop { background: rgb(31 26 21 / 42%); inset: 0; position: absolute; }
+
+.ds-modal__content {
+  background: linear-gradient(160deg, #fbf8f3, #efe6db);
+  border: 1px solid var(--ds-border);
+  border-radius: 0.9rem;
+  box-shadow: 0 20px 50px rgb(48 38 28 / 30%);
+  inset: 50% auto auto 50%;
+  max-width: 560px;
+  padding: 1rem;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: min(92vw, 560px);
+}
+
+.ds-modal__head { align-items: center; display: flex; justify-content: space-between; }
+.ds-modal__body { margin-top: 0.9rem; }
