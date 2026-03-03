@@ -10,6 +10,13 @@ import {
   ToggleSwitch
 } from "@maison/designsystem";
 
+const CONTACT_PLACEHOLDERS = {
+  fullName: "Jean Dupont",
+  email: "nom@email.com",
+  subject: "Votre demande",
+  message: "Expliquez votre besoin"
+} as const;
+
 export function ContactPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -36,19 +43,29 @@ export function ContactPage() {
 
         <div className="ds-col">
           
-          <TextInput label="Nom complet" placeholder="Jean Dupont" value={name} onChange={(e) => setName(e.target.value)} />
+          <TextInput
+            label="Nom complet"
+            placeholder={CONTACT_PLACEHOLDERS.fullName}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
           <TextInput
             label="Email"
             type="email"
-            placeholder="nom@email.com"
+            placeholder={CONTACT_PLACEHOLDERS.email}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <TextInput label="Sujet" placeholder="Votre demande" value={subject} onChange={(e) => setSubject(e.target.value)} />
+          <TextInput
+            label="Sujet"
+            placeholder={CONTACT_PLACEHOLDERS.subject}
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+          />
           <TextArea
             label="Message"
             rows={5}
-            placeholder="Expliquez votre besoin"
+            placeholder={CONTACT_PLACEHOLDERS.message}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />

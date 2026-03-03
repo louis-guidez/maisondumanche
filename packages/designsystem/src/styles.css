@@ -64,6 +64,36 @@
   color: #f8f6f3;
 }
 
+.ds-label--shape-plain {
+  border-radius: 0;
+  padding: 0;
+}
+
+.ds-label--shape-pill {
+  border: 1px solid #ccbca9;
+  border-radius: 999px;
+  padding: 0.2rem 0.75rem;
+}
+
+.ds-label--shape-soft {
+  background: linear-gradient(145deg, #faf4ed, #efe5da);
+  border-radius: 0.45rem;
+  padding: 0.24rem 0.55rem;
+}
+
+.ds-label--shape-outline {
+  border: 1px solid #cab9a7;
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.5rem;
+}
+
+.ds-label--shape-tag {
+  background: linear-gradient(160deg, #587264, #445b50);
+  border-radius: 0.32rem;
+  color: #f8f6f3;
+  padding: 0.2rem 0.5rem;
+}
+
 .ds-label--bold {
   font-weight: 800;
 }
@@ -777,6 +807,16 @@
   text-transform: uppercase;
 }
 
+.ds-label-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ds-label-demo--shapes {
+  margin-top: 1rem;
+}
+
 .ds-divider {
   align-items: center;
   display: flex;
@@ -837,6 +877,10 @@
   flex-wrap: wrap;
   gap: 0.35rem;
   padding: 0.35rem;
+}
+
+.ds-components-panel {
+  margin-top: 0.8rem;
 }
 
 .ds-tabs__tab {

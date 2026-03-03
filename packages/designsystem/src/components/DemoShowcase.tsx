@@ -11,6 +11,12 @@ import { QuantityStepper } from "./QuantityStepper";
 import { InfoCard } from "./InfoCard";
 import { ChipGroup } from "./ChipGroup";
 
+const DEMO_PLACEHOLDERS = {
+  name: "Votre nom",
+  email: "nom@email.com",
+  message: "Votre message"
+} as const;
+
 export function DemoShowcase() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -40,7 +46,7 @@ export function DemoShowcase() {
           <TextInput
             value={name}
             onChange={(event) => setName(event.target.value)}
-            placeholder="Votre nom"
+            placeholder={DEMO_PLACEHOLDERS.name}
             icon="🪵"
           />
 
@@ -48,7 +54,7 @@ export function DemoShowcase() {
             type="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            placeholder="nom@email.com"
+            placeholder={DEMO_PLACEHOLDERS.email}
             icon="✉"
           />
 
@@ -56,7 +62,7 @@ export function DemoShowcase() {
             rows={3}
             value={message}
             onChange={(event) => setMessage(event.target.value)}
-            placeholder="Votre message"
+            placeholder={DEMO_PLACEHOLDERS.message}
             icon="✎"
           />
 
