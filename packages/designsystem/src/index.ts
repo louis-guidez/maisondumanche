@@ -1,3 +1,4 @@
+export { Label } from "./components/Label";
 export { Badge } from "./components/Badge";
 export { Button } from "./components/Button";
 export { TextInput } from "./components/TextInput";
@@ -11,4 +12,8 @@ export { QuantityStepper } from "./components/QuantityStepper";
 export { InfoCard } from "./components/InfoCard";
 export { ChipGroup } from "./components/ChipGroup";
 export type { ChipOption } from "./components/ChipGroup";
+export { NavBar } from "./components/NavBar";
+export type { NavItem } from "./components/NavBar";
+export { PageSwitch } from "./components/PageSwitch";
+export { ProductCard } from "./components/ProductCard";
 export { DemoShowcase } from "./components/DemoShowcase";

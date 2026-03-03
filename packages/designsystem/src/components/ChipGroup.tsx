@@ -1,3 +1,4 @@
+import { Label } from "./Label";
 import type { ReactNode } from "react";
 
 export interface ChipOption {
@@ -34,7 +35,7 @@ export function ChipGroup({ options, selected, onChange }: ChipGroupProps) {
             onClick={() => toggle(option.value)}
           >
             {option.icon ? <span className="ds-chip__icon">{option.icon}</span> : null}
-            {option.label}
+            <Label size="sm">{option.label}</Label>
           </button>
         );
       })}

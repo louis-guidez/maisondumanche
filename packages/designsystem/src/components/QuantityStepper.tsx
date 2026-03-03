@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Label } from "./Label";
 
 interface QuantityStepperProps {
   label?: string;
@@ -40,7 +41,9 @@ export function QuantityStepper({
 
   return (
     <div className="ds-stepper" role="group" aria-label={label}>
-      <span className="ds-stepper__label">{label}</span>
+      <Label size="sm" className="ds-stepper__label">
+        {label}
+      </Label>
       <div className="ds-stepper__controls">
         <button
           type="button"
@@ -52,7 +55,7 @@ export function QuantityStepper({
           −
         </button>
         <output className="ds-stepper__value" aria-live="polite">
-          {current}
+          <Label>{current}</Label>
         </output>
         <button
           type="button"

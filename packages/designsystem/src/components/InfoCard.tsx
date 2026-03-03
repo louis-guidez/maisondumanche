@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Label } from "./Label";
 
 interface InfoCardProps {
   title: string;
@@ -11,8 +12,14 @@ export function InfoCard({ title, subtitle, children, action }: InfoCardProps) {
   return (
     <article className="ds-card">
       <header className="ds-card__head">
-        <h3 className="ds-card__title">{title}</h3>
-        {subtitle ? <p className="ds-card__subtitle">{subtitle}</p> : null}
+        <Label as="h3" className="ds-card__title" size="xl">
+          {title}
+        </Label>
+        {subtitle ? (
+          <Label className="ds-card__subtitle" tone="muted">
+            {subtitle}
+          </Label>
+        ) : null}
       </header>
       {children ? <div className="ds-card__body">{children}</div> : null}
       {action ? <div className="ds-card__action">{action}</div> : null}

@@ -1,5 +1,6 @@
 import { useId } from "react";
 import type { InputHTMLAttributes } from "react";
+import { Label } from "./Label";
 
 interface ToggleSwitchProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
   label: string;
@@ -15,7 +16,7 @@ export function ToggleSwitch({ label, id, className, ...props }: ToggleSwitchPro
       <span className="ds-toggle__track" aria-hidden="true">
         <span className="ds-toggle__thumb" />
       </span>
-      <span>{label}</span>
+      <Label>{label}</Label>
     </label>
   );
 }

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
+import { Label } from "./Label";
 
 export interface SelectOption {
   value: string;
@@ -59,6 +60,9 @@ export function SelectMenu({ label, options, value, defaultValue, onChange }: Se
 
   return (
     <div className="ds-select" ref={rootRef}>
+      <Label className="ds-select__label" size="sm" tone="muted">
+        {label}
+      </Label>
       <button
         type="button"
         className="ds-select__head"
@@ -66,10 +70,10 @@ export function SelectMenu({ label, options, value, defaultValue, onChange }: Se
         aria-haspopup="listbox"
         onClick={() => setOpen((state) => !state)}
       >
-        <span>
+        <Label size="lg">
           {selectedOption?.icon ? <span className="ds-select__icon">{selectedOption.icon}</span> : null}
           {selectedOption?.label ?? label}
-        </span>
+        </Label>
         <span className={`ds-select__caret ${open ? "is-open" : ""}`} aria-hidden="true">
           ⌄
         </span>
@@ -88,10 +92,10 @@ export function SelectMenu({ label, options, value, defaultValue, onChange }: Se
                   aria-selected={isSelected}
                   onClick={() => selectOption(option.value)}
                 >
-                  <span>
+                  <Label size="lg">
                     {option.icon ? <span className="ds-select__icon">{option.icon}</span> : null}
                     {option.label}
-                  </span>
+                  </Label>
                   {isSelected ? <span aria-hidden="true">✓</span> : null}
                 </button>
               </li>

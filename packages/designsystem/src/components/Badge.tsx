@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
+import { Label } from "./Label";
 
 type BadgeVariant = "special" | "eco" | "new" | "sale";
 
@@ -25,7 +26,7 @@ export function Badge({ children, variant = "special", icon, asButton = false, .
     return (
       <button type="button" className={className} {...buttonProps}>
         {icon ? <span className="ds-badge__icon">{icon}</span> : null}
-        {children}
+        <Label tone={variant === "special" ? "default" : "contrast"}>{children}</Label>
       </button>
     );
   }
@@ -33,7 +34,7 @@ export function Badge({ children, variant = "special", icon, asButton = false, .
   return (
     <span className={className}>
       {icon ? <span className="ds-badge__icon">{icon}</span> : null}
-      {children}
+      <Label tone={variant === "special" ? "default" : "contrast"}>{children}</Label>
     </span>
   );
 }

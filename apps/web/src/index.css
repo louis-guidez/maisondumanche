@@ -10,3 +10,29 @@ body {
   margin: 0;
   min-height: 100vh;
 }
+
+#root {
+  min-height: 100vh;
+}
+
+.app-top-nav {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(155deg, rgb(250 246 241 / 94%), rgb(237 229 219 / 88%));
+  border-bottom: 1px solid #ccbca9;
+  box-shadow: 0 6px 18px rgb(102 82 61 / 10%);
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  left: 0;
+  padding: 0.9rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+@media (max-width: 640px) {
+  .app-top-nav {
+    flex-wrap: wrap;
+    justify-content: stretch;
+  }
+}
